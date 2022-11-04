@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4512147de046ca24dbf28828d9e18515
+guid: 35661c2f98ac14c489dd0496d7cd13c6
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -48,7 +48,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteBorder: {x: 14, y: 46, z: 25, w: 13}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -117,11 +117,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: glade_0
+      name: fence_0
       rect:
         serializedVersion: 2
         x: 14
-        y: 100
+        y: 114
         width: 32
         height: 32
       alignment: 0
@@ -131,19 +131,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 897e8162ad7cdf34d8ca0af8981bc236
-      internalID: -312119038
+      spriteID: 6b98c466c95fe284791c35143d2adfd1
+      internalID: 326412954
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: glade_1
+      name: fence_1
       rect:
         serializedVersion: 2
-        x: 48
-        y: 100
-        width: 32
+        x: 53
+        y: 115
+        width: 43
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -152,19 +152,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 74748d98f0c1baf4b8043901c10f4a0d
-      internalID: -248414753
+      spriteID: 0f17a6c3d7303254895b358f235a9f91
+      internalID: -2108310385
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: glade_2
+      name: fence_2
       rect:
         serializedVersion: 2
-        x: 82
-        y: 100
-        width: 32
+        x: 103
+        y: 112
+        width: 11
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -173,83 +173,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a9d29d15799d8404f99d018cddf1d071
-      internalID: 1294267099
+      spriteID: 9d6201305ba66fd48869ced967361ea2
+      internalID: 369089518
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: glade_3
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 97
-        width: 32
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0480ae31f04f0284c8cf30a37227dac0
-      internalID: -431077788
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: glade_4
-      rect:
-        serializedVersion: 2
-        x: 176
-        y: 98
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f04e77f3e5f27cb4dbd9b05d75456c08
-      internalID: 498341411
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: glade_5
-      rect:
-        serializedVersion: 2
-        x: 214
-        y: 81
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8303b6f3fc1bd40489fe90df8cb88b7a
-      internalID: 1020172255
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: glade_6
+      name: fence_3
       rect:
         serializedVersion: 2
         x: 14
-        y: 66
+        y: 46
         width: 32
-        height: 32
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -257,20 +194,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f0582f54627b83f48a0de6c4503ad3f5
-      internalID: -2089413648
+      spriteID: 7c5b835a1626bfe4cb269300e5f35e50
+      internalID: 1707712232
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: glade_7
+      name: fence_4
       rect:
         serializedVersion: 2
-        x: 48
-        y: 66
-        width: 32
-        height: 32
+        x: 53
+        y: 47
+        width: 43
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -278,18 +215,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b6a1febfe37cb1c4d9a3fd945a8f07b7
-      internalID: -899677147
+      spriteID: 44aff9888d1769e47b1323cae48db225
+      internalID: 54235713
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: glade_8
+      name: fence_5
       rect:
         serializedVersion: 2
-        x: 82
-        y: 66
+        x: 103
+        y: 73
         width: 32
         height: 32
       alignment: 0
@@ -299,113 +236,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ef2911a5b63e23b4788cf626707189b5
-      internalID: -1104390575
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: glade_9
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 50
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8b7d34ebff55df648a9bf0281dc189dc
-      internalID: 237733478
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: glade_10
-      rect:
-        serializedVersion: 2
-        x: 170
-        y: 50
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 907aae8bc333ebd44b5cf2a1a39f4f78
-      internalID: -2147311177
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: glade_11
-      rect:
-        serializedVersion: 2
-        x: 14
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8c15ae2f9abeb0045ab8b399e34a01e9
-      internalID: -435415114
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: glade_12
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f710385f43762df40922c318761b5c8a
-      internalID: 1633685608
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: glade_13
-      rect:
-        serializedVersion: 2
-        x: 82
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5ff3735aa045c394e8356c18413fea92
-      internalID: 1960203625
+      spriteID: e2c22cf2d53c58d47afb468435c1b307
+      internalID: 534447835
       vertices: []
       indices: 
       edges: []
@@ -414,27 +246,19 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 0
+    internalID: 1537655665
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      glade_9: 237733478
-      glade_5: 1020172255
-      glade_1: -248414753
-      glade_0: -312119038
-      glade_3: -431077788
-      glade_6: -2089413648
-      glade_13: 1960203625
-      glade_12: 1633685608
-      glade_4: 498341411
-      glade_11: -435415114
-      glade_2: 1294267099
-      glade_8: -1104390575
-      glade_7: -899677147
-      glade_10: -2147311177
+      fence_0: 326412954
+      fence_5: 534447835
+      fence_3: 1707712232
+      fence_1: -2108310385
+      fence_4: 54235713
+      fence_2: 369089518
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
