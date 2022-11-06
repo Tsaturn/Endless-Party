@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3e058466d3a988c43887d5355cc898a6
+guid: d6495b8f1173ead40a826c89e88ca0cf
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -120,10 +120,10 @@ TextureImporter:
       name: House_0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 14
-        width: 359
-        height: 354
+        x: 37
+        y: 180
+        width: 282
+        height: 188
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 1, y: 0, z: 0, w: 0}
