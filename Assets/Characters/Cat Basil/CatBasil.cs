@@ -12,6 +12,9 @@ public class CatBasil : MonoBehaviour
     public int count = 1;
     public TextMeshProUGUI text;
 
+    public GameObject[] ON;
+    public GameObject[] OFF;
+
     public void Dialog()
     {
         switch (count)
@@ -61,8 +64,13 @@ public class CatBasil : MonoBehaviour
             
             default:
                 diaglog.SetActive(true);
+                text.color = Color.red;
                 text.text = "рш мюднек лме, векнбей!";
                 count++;
+                foreach (var x in ON)
+                    x.SetActive(true);
+                foreach (var x in OFF)
+                    x.SetActive(false);
                 break;
         }
     }
