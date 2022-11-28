@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
+using Unity.VisualScripting;
 
 public class CatBasil : MonoBehaviour
 {
@@ -11,6 +12,10 @@ public class CatBasil : MonoBehaviour
     public GameObject diaglog;
     public int count = 1;
     public TextMeshProUGUI text;
+    public TextMeshProUGUI textName;
+    public TMP_FontAsset font;
+
+    public Image[] images;
 
     public GameObject[] ON;
     public GameObject[] OFF;
@@ -59,12 +64,21 @@ public class CatBasil : MonoBehaviour
                 text.text = "Последнее предупреждение, кожаный!";
                 count++;
                 break;
-            
-            
-            
+
+
+
             default:
                 diaglog.SetActive(true);
+
+                foreach (var item in images)
+                    item.color = Color.red;
+
+                textName.color = Color.red;
+                textName.font = font;
+
                 text.color = Color.red;
+                text.fontSize = 14;
+                text.font = font;
                 text.text = "ТЫ НАДОЕЛ МНЕ, ЧЕЛОВЕК!";
                 count++;
                 foreach (var x in ON)
