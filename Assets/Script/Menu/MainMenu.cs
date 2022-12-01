@@ -14,4 +14,32 @@ public class MainMenu : MonoBehaviour
         Debug.Log("Выход из игры");
         Application.Quit();
     }
+
+    public GameObject calendar;
+    public void CalendarOn()
+    {
+        calendar.SetActive(true);
+    }
+    public void CalendarOff()
+    {
+        calendar.SetActive(false);
+    }
+
+    private const string saveKey = "PlayerSave";
+    public void DeleteProgress()    //Сброс игрового прогресса
+    {
+        Save();
+    }
+    private void Save()
+    {
+        SaveManager.Save(saveKey, GetSaveSnapshot());
+    }
+    private SaveData.Player GetSaveSnapshot()
+    {
+        var data = new SaveData.Player()
+        {
+            d_ind = 0,
+        };
+        return data;
+    }
 }

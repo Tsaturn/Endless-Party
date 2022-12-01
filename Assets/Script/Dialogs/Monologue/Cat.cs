@@ -5,7 +5,7 @@ using UnityEngine;
 using TMPro;
 using Unity.VisualScripting;
 
-public class CatBasil : MonoBehaviour
+public class Cat : MonoBehaviour
 {
     public GameObject player;
     public GameObject button;
@@ -19,6 +19,9 @@ public class CatBasil : MonoBehaviour
 
     public GameObject[] ON;
     public GameObject[] OFF;
+
+    public GameObject End;
+    public GameObject _catEnd;
 
     public void Dialog()
     {
@@ -46,20 +49,40 @@ public class CatBasil : MonoBehaviour
                 break;
             case 5:
                 diaglog.SetActive(true);
-                text.text = "*Мурчит*";
+                text.text = "Вообще, я предпочитаю, чтобы меня называли просто Борис.";
                 count++;
                 break;
             case 6:
                 diaglog.SetActive(true);
-                text.text = "Человек, а ты не устал по мне тыкать?";
+                text.text = "*Мурчит*";
                 count++;
                 break;
             case 7:
                 diaglog.SetActive(true);
-                text.text = "Нет, серьёзно, сколько можно?";
+                text.text = "Что? В чём секрет моей энергии?";
                 count++;
                 break;
             case 8:
+                diaglog.SetActive(true);
+                text.text = "Думаю, в сне по 16 часов в сутки.";
+                count++;
+                break;
+            case 9:
+                diaglog.SetActive(true);
+                text.text = "*Облизывается*";
+                count++;
+                break;
+            case 10:
+                diaglog.SetActive(true);
+                text.text = "Человек, а ты не устал по мне тыкать?";
+                count++;
+                break;
+            case 11:
+                diaglog.SetActive(true);
+                text.text = "Нет, серьёзно, сколько можно?";
+                count++;
+                break;
+            case 12:
                 diaglog.SetActive(true);
                 text.text = "Последнее предупреждение, кожаный!";
                 count++;
@@ -75,6 +98,7 @@ public class CatBasil : MonoBehaviour
 
                 textName.color = Color.red;
                 textName.font = font;
+                textName.text = "БОРИС";
 
                 text.color = Color.red;
                 text.fontSize = 14;
@@ -85,8 +109,18 @@ public class CatBasil : MonoBehaviour
                     x.SetActive(true);
                 foreach (var x in OFF)
                     x.SetActive(false);
+
+                End.SetActive(true);
+                Invoke("CatEnd", 7);
                 break;
+
+
         }
+    }
+
+    public void CatEnd()
+    {
+        _catEnd.SetActive(true);
     }
 
 

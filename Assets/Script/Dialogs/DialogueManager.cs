@@ -14,6 +14,7 @@ public class DialogueManager : MonoBehaviour
     public Animator startAnim;
  
     private Queue<string> sentences;
+    public int counter = 0;
 
     private void Start()
     {
@@ -36,11 +37,13 @@ public class DialogueManager : MonoBehaviour
     }
     public void DisplayNextSentence()
     {
+        counter = sentences.Count;
         if(sentences.Count == 0) 
         {
             EndDialogue();
             return;
         }
+        
         string sentence = sentences.Dequeue();
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
