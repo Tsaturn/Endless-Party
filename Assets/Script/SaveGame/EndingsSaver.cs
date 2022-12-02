@@ -5,10 +5,9 @@ using UnityEngine;
 namespace SaveData
 {
     [System.Serializable]
-    public class Endings
+    public class End
     {
-        public bool[] _achieved;
-        public Endings() => _achieved = new bool[0];
+        public bool[] End_On = new bool[7] { false,false,false,false,false,false,false };
         
     }
 }

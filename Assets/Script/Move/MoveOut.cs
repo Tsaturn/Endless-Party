@@ -12,7 +12,7 @@ public class MoveOut : MonoBehaviour
         switch (ind)
         {
             case 1:
-                player.GetComponent<Transform>().position = new Vector3(-5.152838f, 0.5087408f, -1);
+                player.GetComponent<Transform>().position = new Vector3(-5.152838f, 0.5087408f, 0);
                 break;
             default:
                 break;

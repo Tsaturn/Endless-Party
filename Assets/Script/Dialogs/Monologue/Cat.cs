@@ -20,7 +20,7 @@ public class Cat : MonoBehaviour
     public GameObject[] ON;
     public GameObject[] OFF;
 
-    public GameObject End;
+    public GameObject _End;
     public GameObject _catEnd;
 
     public void Dialog()
@@ -110,7 +110,9 @@ public class Cat : MonoBehaviour
                 foreach (var x in OFF)
                     x.SetActive(false);
 
-                End.SetActive(true);
+
+                _End.GetComponent<End>().ind = 0;
+                _End.SetActive(true);
                 Invoke("CatEnd", 7);
                 break;
 

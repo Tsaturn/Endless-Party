@@ -12,7 +12,7 @@ public class MoveToHome : MonoBehaviour
         switch (ind)
         {
             case 1:
-                player.GetComponent<Transform>().position = new Vector3(-5.258f, -22.208f, -1);
+                player.GetComponent<Transform>().position = new Vector3(-5.258f, -22.208f, 0);
                 break;
             default:
                 break;
