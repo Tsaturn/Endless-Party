@@ -36,6 +36,7 @@ public class DialogueTrigger : MonoBehaviour
             Player.GetComponent<Move>().enabled = true;
             Player.GetComponent<Animator>().enabled = true;
             Player.GetComponent<AudioSource>().enabled = true;
+            CancelInvoke("CanMove");
         }
     }
 
