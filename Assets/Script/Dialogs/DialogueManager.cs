@@ -15,6 +15,8 @@ public class DialogueManager : MonoBehaviour
  
     private Queue<string> sentences;
     public int counter = 0;
+    public int name_ind = 0;
+    public string[] names;
 
     private void Start()
     {
@@ -26,7 +28,8 @@ public class DialogueManager : MonoBehaviour
         boxAnim.SetBool("boxOpen", true);
         startAnim.SetBool("startOpen",false);
 
-        nameText.text = dialogue.name;
+        names = dialogue.name;
+        nameText.text = names[name_ind];
         sentences.Clear();
 
         foreach(string sentence in dialogue.sentences)
@@ -37,13 +40,17 @@ public class DialogueManager : MonoBehaviour
     }
     public void DisplayNextSentence()
     {
+        
+        nameText.text = names[name_ind];
         counter = sentences.Count;
         if(sentences.Count == 0) 
         {
+            name_ind = 0;
             EndDialogue();
             return;
         }
-        
+        if (name_ind + 1 < names.Length)
+        name_ind++;
         string sentence = sentences.Dequeue();
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));

@@ -6,6 +6,7 @@ public class MoveOut : MonoBehaviour
 {
     public GameObject player;
     public GameObject button;
+    public AudioClip _audio;
 
     public void MoveToLocation(int ind)
     {
@@ -13,6 +14,7 @@ public class MoveOut : MonoBehaviour
         {
             case 1:
                 player.GetComponent<Transform>().position = new Vector3(-5.152838f, 0.5087408f, 0);
+                player.GetComponent<AudioSource>().clip = _audio;
                 break;
             default:
                 break;
