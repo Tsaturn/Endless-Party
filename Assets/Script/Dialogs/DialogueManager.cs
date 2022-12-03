@@ -22,6 +22,13 @@ public class DialogueManager : MonoBehaviour
         sentences = new Queue<string>();
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.F) && counter != 0)
+            DisplayNextSentence();
+
+    }
+
     public void StartDialogue(Dialogue dialogue)
     {
         boxAnim.SetBool("boxOpen", true);

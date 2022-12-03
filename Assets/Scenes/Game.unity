@@ -5833,6 +5833,7 @@ MonoBehaviour:
   Spawn_1:
     name:
     - "\u0424\u0438\u043B\u043B (\u0412\u044B)"
+    - "\u0424\u0438\u043B\u043B (\u0412\u044B)"
     sentences:
     - ...
     - "\u041F\u043E\u0434\u043E\u0436\u0434\u0438\u0442\u0435-\u043A\u0430, \u0443
@@ -5978,8 +5979,8 @@ MonoBehaviour:
     - "\u041D\u0435\u0443\u0436\u0435\u043B\u0438 \u0430\u043D\u0435\u043A\u0434\u043E\u0442
       \u043F\u043E\u0434 \u043D\u043E\u043C\u0435\u0440\u043E\u043C 18 \u0442\u0430\u043A\u043E\u0439
       \u0441\u043C\u0435\u0448\u043D\u043E\u0439?"
-    - "\u041F\u0440\u043E\u0441\u0442\u043E \u043C\u044B \u0435\u0433\u043E \u0432
-      \u043F\u0435\u0440\u0432\u044B\u0439 \u0440\u0430\u0437 \u0441\u043B\u044B\u0448\u0438\u043C!"
+    - "\u041D\u0435, \u043F\u0440\u043E\u0441\u0442\u043E \u043C\u044B \u0435\u0433\u043E
+      \u0432 \u043F\u0435\u0440\u0432\u044B\u0439 \u0440\u0430\u0437 \u0441\u043B\u044B\u0448\u0438\u043C"
   PetkaVasiliy2_dialogue:
     name:
     - "\u041F\u0435\u0442\u044C\u043A\u0430"
@@ -6594,7 +6595,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0414\u0430\u043B\u0435\u0435"
+  m_text: "\u0414\u0430\u043B\u0435\u0435 (F)"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a366189cc7546784da162941d76a6dd8, type: 2}
   m_sharedMaterial: {fileID: -6467388962077269395, guid: a366189cc7546784da162941d76a6dd8, type: 2}
@@ -6621,7 +6622,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 84.25
+  m_fontSize: 57.05
   m_fontSizeBase: 40.8
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -85482,7 +85483,6 @@ MonoBehaviour:
   boxAnim: {fileID: 1963211372}
   startAnim: {fileID: 218409939}
   counter: 0
-  name_ind: 0
   names: []
 --- !u!4 &1504446292
 Transform:
