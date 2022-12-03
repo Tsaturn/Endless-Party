@@ -40,7 +40,7 @@ public class DialogueManager : MonoBehaviour
     public void DisplayNextSentence()
     {
         counter = sentences.Count;
-        if (names.Length - counter + 1 < names.Length)
+        if (names.Length - counter < names.Length)
             nameText.text = names[names.Length - counter];
 
         if (sentences.Count == 0)
