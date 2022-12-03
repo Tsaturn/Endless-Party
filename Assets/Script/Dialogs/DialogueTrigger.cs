@@ -203,32 +203,41 @@ public class DialogueTrigger : MonoBehaviour
         {
             case 1:
                 dm.StartDialogue(PetkaVasiliy1_dialogue);
-                petkavasiliy_counter++;
                 CantMove();
                 InvokeRepeating("CanMove", 0, 1);
+                InvokeRepeating("PetkaVasiliyCounterInc", 0, 1);
                 break;
             case 2:
                 dm.StartDialogue(PetkaVasiliy2_dialogue);
-                petkavasiliy_counter++;
                 CantMove();
                 InvokeRepeating("CanMove", 0, 1);
+                InvokeRepeating("PetkaVasiliyCounterInc", 0, 1);
                 break;
             case 3:
                 dm.StartDialogue(PetkaVasiliy3_dialogue);
-                petkavasiliy_counter++;
                 CantMove();
                 InvokeRepeating("CanMove", 0, 1);
+                InvokeRepeating("PetkaVasiliyCounterInc", 0, 1);
                 break;
             case 4:
                 dm.StartDialogue(PetkaVasiliy4_dialogue);
-                petkavasiliy_counter = 1;
                 CantMove();
                 InvokeRepeating("CanMove", 0, 1);
+                InvokeRepeating("PetkaVasiliyCounterInc", 0, 1);
                 break;
-
-
             default:
                 break;
+        }
+    }
+
+    public void PetkaVasiliyCounterInc()
+    {
+        if (dm.counter == 0)
+        {
+            if (petkavasiliy_counter == 4) petkavasiliy_counter = 1;
+            else petkavasiliy_counter++;
+            CancelInvoke("PetkaVasiliyCounterInc");
+
         }
     }
 
