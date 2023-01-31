@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f7ffaf211ea59ee49b6f241a94b2434d
+guid: 90a9b43108013d54691e77c5ea6cde11
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Prestige
+  - ZnikomitNo24
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
