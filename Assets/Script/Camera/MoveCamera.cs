@@ -5,31 +5,21 @@ public class MoveCamera : MonoBehaviour
 {
     // Добавляем объект, за которым будет двигаться камера
     public Transform target;
-    [Header("Camera position restrictions")]
-    public float minY;
-    public float maxY;
-    public float minX;
-    public float maxX;
+    private Vector3 velocity;
 
     void Update()
     {
-        UpdateCameraPosition();
+        //SmoothDamp плавно изменяет положение. pos arg1 -> pos arg2, направление = pos arg3, speed = arg4;  
+        transform.position = Vector3.SmoothDamp(transform.position, new Vector3(target.position.x, target.position.y, -10), ref velocity, 0.1f);
     }
-
-    // Изменяем позицию камеры на экране
-    void UpdateCameraPosition()
-    {
-        transform.position = new Vector3(
-            // Положение игрового объекта, за которым мы двигаемся
-            Mathf.Clamp(target.position.x, minX, maxX),
-            Mathf.Clamp(target.position.y, minY, maxY),
-            // Положение камеры z должно оставаться неизменным 
-            transform.position.z // (если камеры куда-то проваливается, заменить на, например, -10)
-          );
-    }
-
-
-
-
-
 }
+
+
+
+
+//Возможно это понадобится в будущем
+//[Header("Camera position restrictions")]
+//[SerializeField] float minY;
+//[SerializeField] float maxY;
+//[SerializeField] float minX;
+//[SerializeField] float maxX;

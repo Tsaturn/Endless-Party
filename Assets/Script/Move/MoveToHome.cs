@@ -5,9 +5,10 @@ using UnityEngine.Audio;
 
 public class MoveToHome : MonoBehaviour
 {
-    public GameObject player;
-    public GameObject button;
-    public AudioClip _audio;
+    [SerializeField] private GameObject player;
+    [SerializeField] private GameObject button;
+    [SerializeField] private AudioClip _audio;
+    [SerializeField] private Camera cam;
 
     public void MoveToLocation(int ind)
     {
@@ -16,6 +17,7 @@ public class MoveToHome : MonoBehaviour
             case 1:
                 player.GetComponent<Transform>().position = new Vector3(-5.258f, -22.208f, 0);
                 player.GetComponent<AudioSource>().clip= _audio;
+                cam.transform.position = player.transform.position;
                 break;
             default:
                 break;

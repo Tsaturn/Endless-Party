@@ -84258,6 +84258,7 @@ MonoBehaviour:
   player: {fileID: 6826169875980182544}
   button: {fileID: 1169299614}
   _audio: {fileID: 8300000, guid: 57ea8576c746ccf408b3e18a552e932a, type: 3}
+  cam: {fileID: 2053081922}
 --- !u!61 &1154526545
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -86354,6 +86355,7 @@ MonoBehaviour:
   player: {fileID: 6826169875980182544}
   button: {fileID: 683668488}
   _audio: {fileID: 8300000, guid: 34eed165ca8b2c54283324c8824367dc, type: 3}
+  cam: {fileID: 2053081922}
 --- !u!1 &1707877012
 GameObject:
   m_ObjectHideFlags: 0
@@ -87897,11 +87899,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 6826169875980182549}
-  player: {fileID: 6826169875980182554}
-  minY: -1000
-  maxY: 1000
-  minX: -1000
-  maxX: 1000
 --- !u!1 &2054048393
 GameObject:
   m_ObjectHideFlags: 0
@@ -88509,11 +88506,6 @@ GameObject:
 --- !u!4 &6826169875980182549 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3384349958807793183, guid: 480e17bbce809bd4f9729daea4be1b03, type: 3}
-  m_PrefabInstance: {fileID: 8092068093311699466}
-  m_PrefabAsset: {fileID: 0}
---- !u!70 &6826169875980182554 stripped
-CapsuleCollider2D:
-  m_CorrespondingSourceObject: {fileID: 3384349958807793170, guid: 480e17bbce809bd4f9729daea4be1b03, type: 3}
   m_PrefabInstance: {fileID: 8092068093311699466}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8092068093311699466
