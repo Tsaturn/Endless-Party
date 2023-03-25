@@ -51776,7 +51776,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 22.9
+  m_fontSize: 21.5
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -52510,7 +52510,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.013, y: 0.07}
   m_AnchorMax: {x: 0.98700005, y: 0.9533172}
-  m_AnchoredPosition: {x: 0, y: -1}
+  m_AnchoredPosition: {x: 0, y: -1.0000076}
   m_SizeDelta: {x: 13.999985, y: 2.2714}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &709690177
@@ -52742,7 +52742,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.016, y: 0.13464652}
   m_AnchorMax: {x: 0.9893392, y: 0.83164656}
-  m_AnchoredPosition: {x: -0.5, y: 0.30670166}
+  m_AnchoredPosition: {x: -0.50001526, y: 0.30670166}
   m_SizeDelta: {x: 5.000046, y: 0.8850002}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &738372972
@@ -90443,7 +90443,6 @@ MonoBehaviour:
   button: {fileID: 217590331}
   _End: {fileID: 1215021068}
   _bonfireEnd: {fileID: 991871820}
-  _canvas: {fileID: 2060899122}
 --- !u!70 &1763674954
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -92201,7 +92200,6 @@ MonoBehaviour:
   button: {fileID: 35605711}
   _End: {fileID: 1215021068}
   _drakkarEnd: {fileID: 910759733}
-  _canvas: {fileID: 1360268438}
 --- !u!1 &1998664902
 GameObject:
   m_ObjectHideFlags: 0

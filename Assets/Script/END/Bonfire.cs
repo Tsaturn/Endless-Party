@@ -9,17 +9,7 @@ public class Bonfire : MonoBehaviour
 
     public GameObject _End;
     public GameObject _bonfireEnd;
-    public GameObject _canvas;
 
-    private void Awake()
-    {
-        Invoke("OffCanvas", 15);
-    }
-
-    void OffCanvas()
-    {
-        _canvas.SetActive(false);
-    }
     public void End()
     {
         _End.GetComponent<End>().ind = 2;
