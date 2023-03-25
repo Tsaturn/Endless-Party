@@ -44,6 +44,30 @@ public class DialogueTrigger : MonoBehaviour
     [Header("Диалог с Охраником")]
     public Dialogue Guard_dialogue;
 
+    [Header("Сигвард")]
+    public Dialogue Sigward1_dialogue;
+    public Dialogue Sigward2_dialogue;
+    private int sigward_counter = 0;
+    public GameObject drink;
+    public GameObject noDrink;
+    public GameObject bonfire;
+    public Dialogue Drink1_dialogue;
+    public Dialogue NoDrink1_dialogue;
+    
+    [Header("Солер")]
+    public Dialogue Soler1_dialogue;
+
+    [Header("Викинги")]
+    public Dialogue Vik1_dialogue;
+    public Dialogue Vik1_1_dialogue;
+    public Dialogue Vik2_dialogue;
+    public Dialogue Go_dialogue;
+    public Dialogue NoGo_dialogue;
+    private int viking_counter = 0;
+    public GameObject go;
+    public GameObject noGo;
+    public GameObject drakar;
+
     public Dialogue Test_dialogue;
     public Dialogue Test2_dialogue;
 
@@ -145,19 +169,20 @@ public class DialogueTrigger : MonoBehaviour
     }
     public void EnnyOffButtons()
     {
-        if (dm.counter == 0)
-        {
+        //if (dm.counter == 0)
+        //{
             anek.SetActive(false);
             flirt.SetActive(false);
             hello.SetActive(false);
-            CancelInvoke("EnnyOffButtons");
-        }
+          //  CancelInvoke("EnnyOffButtons");
+        //}
     }
     public void EnnyAnek()
     {
+        //InvokeRepeating("EnnyOffButtons", 0, 1);
+        EnnyOffButtons();
         dm.StartDialogue(EnnyAnek_dialogue);
         enny_counter = 1;
-        InvokeRepeating("EnnyOffButtons", 0, 1);
         CantMove();
         InvokeRepeating("CanMove", 0, 1);
     }
@@ -169,9 +194,10 @@ public class DialogueTrigger : MonoBehaviour
     }
     public void EnnyFlirt()
     {
+        //InvokeRepeating("EnnyOffButtons", 0, 1);
+        EnnyOffButtons();
         dm.StartDialogue(EnnyFlirt_dialogue);
         enny_counter = 2;
-        InvokeRepeating("EnnyOffButtons", 0, 1);
         CantMove();
         InvokeRepeating("CanMove", 0, 1);
     }
@@ -183,9 +209,10 @@ public class DialogueTrigger : MonoBehaviour
     }
     public void EnnyHello()
     {
+        //InvokeRepeating("EnnyOffButtons", 0, 1);
+        EnnyOffButtons();
         dm.StartDialogue(EnnyHello_dialogue);
         enny_counter = 3;
-        InvokeRepeating("EnnyOffButtons", 0, 1);
         CantMove();
         InvokeRepeating("CanMove", 0, 1);
     }
@@ -245,6 +272,93 @@ public class DialogueTrigger : MonoBehaviour
     public void GuardDialog()
     {
         dm.StartDialogue(Guard_dialogue);
+        CantMove();
+        InvokeRepeating("CanMove", 0, 1);
+    }
+    
+    //Диалог с Сигвардом
+    public void SigwardDialog()
+    {
+        if (sigward_counter == 0)
+        {
+            dm.StartDialogue(Sigward1_dialogue);
+            drink.SetActive(true);
+            noDrink.SetActive(true);
+            CantMove();
+            InvokeRepeating("CanMove", 0, 1);
+        }
+        else if (sigward_counter > 0) {
+            dm.StartDialogue(Sigward2_dialogue);
+            CantMove();
+            InvokeRepeating("CanMove", 0, 1);
+        }
+    }
+    public void DrinkSigwardDialog()
+    {
+        drink.SetActive(false);
+        noDrink.SetActive(false);
+        bonfire.SetActive(true);
+        sigward_counter++;
+        dm.StartDialogue(Drink1_dialogue);
+        CantMove();
+        InvokeRepeating("CanMove", 0, 1);
+    }
+    public void NoDrinkSigwardDialog()
+    {
+        drink.SetActive(false);
+        noDrink.SetActive(false);
+        dm.StartDialogue(NoDrink1_dialogue);    
+        CantMove();
+        InvokeRepeating("CanMove", 0, 1);
+    }
+    
+    //Диалог с Солером
+    public void SolerDialog()
+    {
+        dm.StartDialogue(Soler1_dialogue);
+        CantMove();
+        InvokeRepeating("CanMove", 0, 1);
+    }
+    //Диалог с Викингом1
+    public void Viking1Dialog()
+    {
+        if (viking_counter == 0)
+        {
+            dm.StartDialogue(Vik1_dialogue);
+            go.SetActive(true);
+            noGo.SetActive(true);
+            CantMove();
+            InvokeRepeating("CanMove", 0, 1);
+        }
+        else if (viking_counter > 0) {
+            dm.StartDialogue(Vik1_1_dialogue);
+            CantMove();
+            InvokeRepeating("CanMove", 0, 1);
+        }
+    }
+    public void GoDialog()
+    {
+        go.SetActive(false);
+        noGo.SetActive(false);
+        drakar.SetActive(true);
+        viking_counter++;
+        dm.StartDialogue(Go_dialogue);
+        CantMove();
+        InvokeRepeating("CanMove", 0, 1);
+    }
+    public void NoGoDialog()
+    {
+        go.SetActive(false);
+        noGo.SetActive(false);
+        dm.StartDialogue(NoGo_dialogue);    
+        CantMove();
+        InvokeRepeating("CanMove", 0, 1);
+    }
+    
+    //Диалог с Викингом2
+    public void Viking2Dialog()
+    {
+        dm.StartDialogue(Vik2_dialogue);
         CantMove();
         InvokeRepeating("CanMove", 0, 1);
     }
