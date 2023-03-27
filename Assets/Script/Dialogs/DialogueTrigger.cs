@@ -41,8 +41,12 @@ public class DialogueTrigger : MonoBehaviour
     public Dialogue PetkaVasiliy4_dialogue;
     private int petkavasiliy_counter = 1;
 
-    [Header("Диалог с Охраником")]
-    public Dialogue Guard_dialogue;
+    [Header("Ожидающий")]
+    public Dialogue Waiter_dialogue;
+    public Dialogue Player_why_monologue1;
+    public Dialogue Player_why_monologue2;
+    public GameObject why_trigger;
+    public GameObject why_trigger2;
 
     [Header("Сигвард")]
     public Dialogue Sigward1_dialogue;
@@ -53,7 +57,7 @@ public class DialogueTrigger : MonoBehaviour
     public GameObject bonfire;
     public Dialogue Drink1_dialogue;
     public Dialogue NoDrink1_dialogue;
-    
+
     [Header("Солер")]
     public Dialogue Soler1_dialogue;
 
@@ -67,6 +71,24 @@ public class DialogueTrigger : MonoBehaviour
     public GameObject go;
     public GameObject noGo;
     public GameObject drakar;
+
+    [Header("Телефон")]
+    public Dialogue phone_dialogue;
+    public Dialogue four_wall_dialogue;
+    public Dialogue four_wall_dialogue2;
+    public Dialogue four_wall_dialogue3;
+    public Dialogue chuvak_dialogue;
+    public Dialogue friend_dialogue;
+    public Dialogue natasha_dialogue;
+    public Dialogue money_dialogue;
+
+    public GameObject four_wall;
+    public GameObject chuvak;
+    public GameObject friend;
+    public GameObject natasha;
+    public GameObject money;
+
+    private int four_wall_counter = 0;
 
     public Dialogue Test_dialogue;
     public Dialogue Test2_dialogue;
@@ -171,10 +193,10 @@ public class DialogueTrigger : MonoBehaviour
     {
         //if (dm.counter == 0)
         //{
-            anek.SetActive(false);
-            flirt.SetActive(false);
-            hello.SetActive(false);
-          //  CancelInvoke("EnnyOffButtons");
+        anek.SetActive(false);
+        flirt.SetActive(false);
+        hello.SetActive(false);
+        //  CancelInvoke("EnnyOffButtons");
         //}
     }
     public void EnnyAnek()
@@ -268,14 +290,30 @@ public class DialogueTrigger : MonoBehaviour
         }
     }
 
-    //Диалог с охранником
-    public void GuardDialog()
+    //Диалог с ожидающим
+    public void WaiterDialog()
     {
-        dm.StartDialogue(Guard_dialogue);
+        dm.StartDialogue(Waiter_dialogue);
+        why_trigger.SetActive(true);
         CantMove();
         InvokeRepeating("CanMove", 0, 1);
     }
-    
+    public void Why1Dialog()
+    {
+        why_trigger2.SetActive(true);
+        why_trigger.SetActive(false);
+        dm.StartDialogue(Player_why_monologue1);
+        CantMove();
+        InvokeRepeating("CanMove", 0, 1);
+    }
+    public void Why2Dialog()
+    {
+        why_trigger2.SetActive(false);
+        dm.StartDialogue(Player_why_monologue2);
+        CantMove();
+        InvokeRepeating("CanMove", 0, 1);
+    }
+
     //Диалог с Сигвардом
     public void SigwardDialog()
     {
@@ -287,7 +325,8 @@ public class DialogueTrigger : MonoBehaviour
             CantMove();
             InvokeRepeating("CanMove", 0, 1);
         }
-        else if (sigward_counter > 0) {
+        else if (sigward_counter > 0)
+        {
             dm.StartDialogue(Sigward2_dialogue);
             CantMove();
             InvokeRepeating("CanMove", 0, 1);
@@ -307,11 +346,11 @@ public class DialogueTrigger : MonoBehaviour
     {
         drink.SetActive(false);
         noDrink.SetActive(false);
-        dm.StartDialogue(NoDrink1_dialogue);    
+        dm.StartDialogue(NoDrink1_dialogue);
         CantMove();
         InvokeRepeating("CanMove", 0, 1);
     }
-    
+
     //Диалог с Солером
     public void SolerDialog()
     {
@@ -330,7 +369,8 @@ public class DialogueTrigger : MonoBehaviour
             CantMove();
             InvokeRepeating("CanMove", 0, 1);
         }
-        else if (viking_counter > 0) {
+        else if (viking_counter > 0)
+        {
             dm.StartDialogue(Vik1_1_dialogue);
             CantMove();
             InvokeRepeating("CanMove", 0, 1);
@@ -350,11 +390,11 @@ public class DialogueTrigger : MonoBehaviour
     {
         go.SetActive(false);
         noGo.SetActive(false);
-        dm.StartDialogue(NoGo_dialogue);    
+        dm.StartDialogue(NoGo_dialogue);
         CantMove();
         InvokeRepeating("CanMove", 0, 1);
     }
-    
+
     //Диалог с Викингом2
     public void Viking2Dialog()
     {
@@ -363,7 +403,85 @@ public class DialogueTrigger : MonoBehaviour
         InvokeRepeating("CanMove", 0, 1);
     }
 
-
+    //Диалоги с телефоном
+    public void PhoneDialog()
+    {
+        dm.StartDialogue(phone_dialogue);
+        four_wall.SetActive(true);
+        chuvak.SetActive(true);
+        friend.SetActive(true);
+        natasha.SetActive(true);
+        money.SetActive(true);
+        CantMove();
+        InvokeRepeating("CanMove", 0, 1);
+    }
+    public void FourWallDialog()
+    {
+        four_wall.SetActive(false);
+        chuvak.SetActive(false);
+        friend.SetActive(false);
+        natasha.SetActive(false);
+        money.SetActive(false);
+        if (four_wall_counter == 0)
+        {
+            dm.StartDialogue(four_wall_dialogue);
+            four_wall_counter++;
+        }
+        else if (four_wall_counter == 1)
+        {
+            dm.StartDialogue(four_wall_dialogue2);
+            four_wall_counter++;
+        }
+        else if (four_wall_counter >= 2)
+            dm.StartDialogue(four_wall_dialogue3);
+        CantMove();
+        InvokeRepeating("CanMove", 0, 1);
+    }
+    public void ChuvakDialog()
+    {
+        four_wall.SetActive(false);
+        chuvak.SetActive(false);
+        friend.SetActive(false);
+        natasha.SetActive(false);
+        money.SetActive(false);
+        dm.StartDialogue(chuvak_dialogue);
+        CantMove();
+        InvokeRepeating("CanMove", 0, 1);
+    }
+    public void FriendDialog()
+    {
+        four_wall.SetActive(false);
+        chuvak.SetActive(false);
+        friend.SetActive(false);
+        natasha.SetActive(false);
+        money.SetActive(false);
+        dm.StartDialogue(friend_dialogue);
+        CantMove();
+        InvokeRepeating("CanMove", 0, 1);
+    }
+    public void NatashaDialog()
+    {
+        four_wall.SetActive(false);
+        chuvak.SetActive(false);
+        friend.SetActive(false);
+        natasha.SetActive(false);
+        money.SetActive(false);
+        dm.StartDialogue(natasha_dialogue);
+        CantMove();
+        natasha.GetComponent<Galochka>().End();
+        //InvokeRepeating("CanMove", 0, 1);
+    }
+    public void MoneyDialog()
+    {
+        four_wall.SetActive(false);
+        chuvak.SetActive(false);
+        friend.SetActive(false);
+        natasha.SetActive(false);
+        money.SetActive(false);
+        dm.StartDialogue(money_dialogue);
+        CantMove();
+        InvokeRepeating("CanMove", 0, 1);
+    }
 
     public void Test_TriggerDialogue() //Запуск диалога
     {
