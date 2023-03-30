@@ -90,6 +90,15 @@ public class DialogueTrigger : MonoBehaviour
 
     private int four_wall_counter = 0;
 
+    [Header("Михаил")]
+    public Dialogue Miha_dialogue1;
+    public Dialogue Miha_dialogue2;
+    public Dialogue Miha_dialogue3;
+    public Dialogue Miha_dialogue4;
+    public Dialogue Miha_dialogue5;
+
+    public GameObject bath;
+    private int miha_counter = 1;
     public Dialogue Test_dialogue;
     public Dialogue Test2_dialogue;
 
@@ -479,6 +488,43 @@ public class DialogueTrigger : MonoBehaviour
         natasha.SetActive(false);
         money.SetActive(false);
         dm.StartDialogue(money_dialogue);
+        CantMove();
+        InvokeRepeating("CanMove", 0, 1);
+    }
+
+    //Диалог с Мишей
+    public void MihaDialog()
+    {
+
+        switch (miha_counter)
+        {
+            case 1:
+                miha_counter++;
+                dm.StartDialogue(Miha_dialogue1);
+                break;
+
+            case 2:
+                miha_counter++;
+                dm.StartDialogue(Miha_dialogue2);
+                break;
+
+            case 3:
+                miha_counter++;
+                dm.StartDialogue(Miha_dialogue3);
+                break;
+
+            case 4:
+                miha_counter++;
+                dm.StartDialogue(Miha_dialogue4);
+                bath.SetActive(true);
+                break;
+            
+            case 5:
+                dm.StartDialogue(Miha_dialogue5);
+                break;
+            default:
+                break;
+        }
         CantMove();
         InvokeRepeating("CanMove", 0, 1);
     }
