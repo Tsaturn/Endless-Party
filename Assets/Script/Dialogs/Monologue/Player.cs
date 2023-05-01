@@ -7,11 +7,15 @@ public class Player : MonoBehaviour
     public DialogueTrigger dt;
     public int d_ind = 0;
 
+    //0 - ничего не сделано, 1 - квест выполнен, 2 - квест провален, 3 - больше не запускать этот диалог
+    public Dictionary<string, int> Quest = new Dictionary<string, int>();
+
     private const string saveKey = "PlayerSave";
     public void Start()
     {
         Load();
         Invoke("ShowDialog", 1);
+        Quest["Sigward"] = 0;
     }
 
     public void ShowDialog()

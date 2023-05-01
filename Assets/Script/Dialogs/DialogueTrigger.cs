@@ -49,6 +49,7 @@ public class DialogueTrigger : MonoBehaviour
     public GameObject why_trigger2;
 
     [Header("Сигвард")]
+    public GameObject BonfirePlayDir;
     public Dialogue Sigward1_dialogue;
     public Dialogue Sigward2_dialogue;
     private int sigward_counter = 0;
@@ -57,6 +58,7 @@ public class DialogueTrigger : MonoBehaviour
     public GameObject bonfire;
     public Dialogue Drink1_dialogue;
     public Dialogue NoDrink1_dialogue;
+    public Dialogue Sigward_Quest_Ex;
 
     [Header("Солер")]
     public Dialogue Soler1_dialogue;
@@ -324,9 +326,21 @@ public class DialogueTrigger : MonoBehaviour
     }
 
     //Диалог с Сигвардом
+    private void BonfirePlayDirector()
+    {
+        if (dm.counter == 0) BonfirePlayDir.SetActive(true);
+    }
     public void SigwardDialog()
     {
-        if (sigward_counter == 0)
+        if (Player.GetComponent<Player>().Quest["Sigward"] == 1)
+        {
+            dm.StartDialogue(Sigward_Quest_Ex);
+            InvokeRepeating("BonfirePlayDirector", 1, 1);
+            Player.GetComponent<Player>().Quest["Sigward"] = 3;
+            CantMove();
+            InvokeRepeating("CanMove", 0, 1);
+        }
+        else if (sigward_counter == 0)
         {
             dm.StartDialogue(Sigward1_dialogue);
             drink.SetActive(true);
@@ -518,7 +532,7 @@ public class DialogueTrigger : MonoBehaviour
                 dm.StartDialogue(Miha_dialogue4);
                 bath.SetActive(true);
                 break;
-            
+
             case 5:
                 dm.StartDialogue(Miha_dialogue5);
                 break;

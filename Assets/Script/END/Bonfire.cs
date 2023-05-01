@@ -10,6 +10,19 @@ public class Bonfire : MonoBehaviour
     public GameObject _End;
     public GameObject _bonfireEnd;
 
+    public Camera mainCamera;
+
+    [Header("MiniGame")]
+    public Camera gameCamera;
+    public GameObject BonfireGame;
+    public void PlayGame()
+    {
+        BonfireGame.SetActive(true);
+        gameCamera.enabled = true;
+        gameCamera = Camera.main;
+        player.active = false;
+    }
+
     public void End()
     {
         _End.GetComponent<End>().ind = 2;
