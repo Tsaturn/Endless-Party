@@ -38,11 +38,12 @@ public class BFPlayer : MonoBehaviour
         jump();
         ss = "Score: " + score.ToString();
         tmp.text = ss;
-        if (score >= 100)
+        if (score >= 75)
         {
             win = true;
-            sun.GetComponent<SpriteRenderer>().sprite = sprite;
             end.SetActive(true);
+            if (score >= 100)
+            sun.GetComponent<SpriteRenderer>().sprite = sprite;
         }
     }
 

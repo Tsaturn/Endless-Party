@@ -6,11 +6,21 @@ using UnityEngine;
 public class BFSpawn : MonoBehaviour
 {
     public List<GameObject> spawnList = new List<GameObject>();
+    private bool speedchanger = false;
     private void Start()
     {
         InvokeRepeating("Spawn", 0, 3f);
     }
-
+    private void Update()
+    {
+        if (!speedchanger)
+            if (spawnList[0].GetComponent<BFObject>().speed <= -6f)
+            {
+                speedchanger = true;
+                CancelInvoke("Spawn");
+                InvokeRepeating("Spawn", 0, 2f);
+            }
+    }
     private void Spawn()
     {
         System.Random r = new System.Random();
