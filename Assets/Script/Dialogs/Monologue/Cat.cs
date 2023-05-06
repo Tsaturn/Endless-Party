@@ -23,6 +23,17 @@ public class Cat : MonoBehaviour
     public GameObject _End;
     public GameObject _catEnd;
 
+    [Header("MiniGame")]
+    public Camera mainCamera;
+    public Camera gameCamera;
+    public GameObject GRCatGame;
+    public void PlayGame()
+    {
+        GRCatGame.SetActive(true);
+        gameCamera.enabled = true;
+        gameCamera = Camera.main;
+        player.active = false;
+    }
     public void Dialog()
     {
         switch (count)
@@ -86,11 +97,12 @@ public class Cat : MonoBehaviour
                 diaglog.SetActive(true);
                 text.text = "Последнее предупреждение, кожаный!";
                 count++;
+                PlayGame();
                 break;
 
+                
 
-
-            default:
+            case 666:
                 diaglog.SetActive(true);
 
                 foreach (var item in images)
@@ -116,6 +128,10 @@ public class Cat : MonoBehaviour
                 Invoke("CatEnd", 7);
                 break;
 
+            case 777:
+                diaglog.SetActive(true);
+                text.text = "Ладно, я прощаю твоё невежество, лысая обезьяна.";
+                break;
 
         }
     }

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: bbd753c0f2c106c4e8afdab088332352
+guid: 01c393712e0ba564b97e07c579d62ee8
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,13 +117,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Cat anim_0
+      name: pixil-frame-0 (6)_0
       rect:
         serializedVersion: 2
-        x: 17
-        y: 21
-        width: 576
-        height: 526
+        x: 1644
+        y: 1924
+        width: 528
+        height: 493
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,29 +131,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: af515ff30bb8f5b41ba3c3f2df73d70c
-      internalID: -1822625070
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cat anim_1
-      rect:
-        serializedVersion: 2
-        x: 685
-        y: 21
-        width: 576
-        height: 525
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2d3999e9e5229404e966cb91a5137ad9
-      internalID: -133594904
+      spriteID: bf2f5dde2c8c2a4499e6a47e43b9634d
+      internalID: 681888244
       vertices: []
       indices: 
       edges: []
@@ -169,8 +148,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Cat anim_0: -1822625070
-      Cat anim_1: -133594904
+      pixil-frame-0 (6)_0: 681888244
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

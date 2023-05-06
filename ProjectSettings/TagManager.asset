@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Wall
+  - CatRoad
+  - Food
+  - Destroyer
+  - PlayerDestr
+  - GRPlayer
   layers:
   - Default
   - TransparentFX
