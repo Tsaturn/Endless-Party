@@ -77,12 +77,20 @@ public class GRMove : MonoBehaviour
         spawn2.CancelInvoke("Spawn");
         ChangeCamera();
         catEnd.player.SetActive(true);
-        catEnd.count = 777;
+        if (win)
+            catEnd.count = 777;
+        else
+        {
+            catEnd.count = 666;
+            catEnd.Dialog();
+            catEnd.player.GetComponent<AudioSource>().enabled = false;
+        }
         catEnd.GRCatGame.SetActive(false);
     }
     public void ChangeCamera()
     {
         catEnd.mainCamera = Camera.main;
+        //catEnd.gameCamera.enabled = false;
     }
 
     public void ScoreInc()
@@ -104,10 +112,7 @@ public class GRMove : MonoBehaviour
         else
             if (!win)
         {
-            Destroy(gameObject);
-            Invoke("ChangeCamera", 0);
-            catEnd.count = 666;
-            catEnd.Dialog();
+            End();
         }
     }
 }

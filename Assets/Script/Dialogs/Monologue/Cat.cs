@@ -27,6 +27,7 @@ public class Cat : MonoBehaviour
     public Camera mainCamera;
     public Camera gameCamera;
     public GameObject GRCatGame;
+    public DialogueTrigger dt;
     public void PlayGame()
     {
         GRCatGame.SetActive(true);
@@ -97,10 +98,11 @@ public class Cat : MonoBehaviour
                 diaglog.SetActive(true);
                 text.text = "Последнее предупреждение, кожаный!";
                 count++;
-                PlayGame();
+                dt.CarRulesDialog();
+                //PlayGame();
                 break;
 
-                
+
 
             case 666:
                 diaglog.SetActive(true);
@@ -148,6 +150,7 @@ public class Cat : MonoBehaviour
         if (collision.tag == "Player")
         {
             button.SetActive(true);
+            dt.gameObject.SetActive(true);
         }
     }
 
@@ -157,6 +160,7 @@ public class Cat : MonoBehaviour
         {
             button.SetActive(false);
             diaglog.SetActive(false);
+            dt.gameObject.SetActive(false);
         }
     }
 }

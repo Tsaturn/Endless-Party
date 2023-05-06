@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class DialogueTrigger : MonoBehaviour
@@ -101,6 +102,11 @@ public class DialogueTrigger : MonoBehaviour
 
     public GameObject bath;
     private int miha_counter = 1;
+
+    [Header("Правила игры(кот)")]
+    public Dialogue CatRules;
+    public Cat cat;
+
     public Dialogue Test_dialogue;
     public Dialogue Test2_dialogue;
 
@@ -541,6 +547,29 @@ public class DialogueTrigger : MonoBehaviour
         }
         CantMove();
         InvokeRepeating("CanMove", 0, 1);
+    }
+
+    //Диалог с Котом
+    public void CarRulesDialog()
+    {
+        dm.StartDialogue(CatRules);
+        CantMove();
+        InvokeRepeating("CanMove", 0, 1);
+        InvokeRepeating("CatPlay", 0, 1);
+    }
+
+    private void CatPlay()
+    {
+        if (dm.counter == 0)
+        {
+            cat.PlayGame();
+            Invoke("CancelCatPlay", 1);
+        }
+    }
+
+    private void CancelCatPlay()
+    {
+        CancelInvoke("CatPlay");
     }
 
     public void Test_TriggerDialogue() //Запуск диалога
