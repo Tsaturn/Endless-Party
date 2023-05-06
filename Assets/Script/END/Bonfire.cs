@@ -10,11 +10,22 @@ public class Bonfire : MonoBehaviour
     public GameObject _End;
     public GameObject _bonfireEnd;
 
+    public List<GameObject> BeforeReturn = new List<GameObject>();
+
     public Camera mainCamera;
 
     [Header("MiniGame")]
     public Camera gameCamera;
     public GameObject BonfireGame;
+
+    private void Start()
+    {
+        if (player.GetComponent<Player>().Quest["Sigward"] == 3) foreach (var item in BeforeReturn)
+            {
+                item.SetActive(false);
+            }
+    }
+
     public void PlayGame()
     {
         BonfireGame.SetActive(true);

@@ -8,5 +8,6 @@ namespace SaveData
     public class Player
     {
         public int d_ind;
+        public int Sigward;
     }
 }

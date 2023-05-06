@@ -6,36 +6,56 @@ public class Player : MonoBehaviour
 {
     public DialogueTrigger dt;
     public int d_ind = 0;
+    public GameObject Creator;
 
     //0 - ничего не сделано, 1 - квест выполнен, 2 - квест провален, 3 - больше не запускать этот диалог
     public Dictionary<string, int> Quest = new Dictionary<string, int>();
-
     private const string saveKey = "PlayerSave";
-    public void Start()
+    public void Awake()
     {
         Load();
-        Invoke("ShowDialog", 1);
-        Quest["Sigward"] = 0;
+        if (!Quest.ContainsKey("Sigward"))
+            Quest["Sigward"] = 0;
     }
-
+    private void Start()
+    {
+        Invoke("ShowDialog", 0f);
+    }
+    private void CreatorOff2()
+    {
+        if (dt.dm.counter == 2) { Debug.Log("Delete"); Creator.SetActive(false); Invoke("CancelCreatorOff2", 1); }
+    }
+    private void CancelCreatorOff2()
+    {
+        CancelInvoke("CreatorOff2");
+    }
     public void ShowDialog()
     {
         switch (d_ind)
         {
             case 0:
+                Creator.SetActive(true);
+                Creator.transform.position = new Vector3(-5, -1, 0);
                 dt.Spawn0_TriggerDialogue();
                 d_ind++;
                 Save();
+                InvokeRepeating("CreatorOff2", 0, 1);
                 break;
             case 1:
+                Creator.SetActive(true);
+                Creator.transform.position = new Vector3(-5, -1, 0);
                 dt.Spawn1_TriggerDialogue();
                 d_ind++;
                 Save();
+                InvokeRepeating("CreatorOff2", 0, 1);
                 break;
             case 2:
+                Creator.SetActive(true);
+                Creator.transform.position = new Vector3(-5, -1, 0);
                 dt.Spawn2_TriggerDialogue();
                 d_ind++;
                 Save();
+                InvokeRepeating("CreatorOff2", 0, 1);
                 break;
             case 3:
                 dt.Spawn3_TriggerDialogue();
@@ -43,9 +63,12 @@ public class Player : MonoBehaviour
                 Save();
                 break;
             case 4:
+                Creator.SetActive(true);
+                Creator.transform.position = new Vector3(-5, -1, 0);
                 dt.Spawn4_TriggerDialogue();
                 d_ind++;
                 Save();
+                InvokeRepeating("CreatorOff2", 0, 1);
                 break;
 
 
@@ -62,9 +85,10 @@ public class Player : MonoBehaviour
         var data = SaveManager.Load<SaveData.Player>(saveKey);
 
         d_ind = data.d_ind;
+        Quest["Sigward"] = data.Sigward;
     }
 
-    private void Save()
+    public void Save()
     {
         SaveManager.Save(saveKey, GetSaveSnapshot());
     }
@@ -73,6 +97,7 @@ public class Player : MonoBehaviour
         var data = new SaveData.Player()
         {
             d_ind = this.d_ind,
+            Sigward = this.Quest["Sigward"],
         };
         return data;
     }

@@ -166,8 +166,6 @@ public class DialogueTrigger : MonoBehaviour
         InvokeRepeating("CanMove", 0, 1);
     }
 
-
-
     //Диалоги с NPC
     public void Tony_TriggerDialogue() //Диалог с Тони
     {
@@ -343,6 +341,7 @@ public class DialogueTrigger : MonoBehaviour
             dm.StartDialogue(Sigward_Quest_Ex);
             InvokeRepeating("BonfirePlayDirector", 1, 1);
             Player.GetComponent<Player>().Quest["Sigward"] = 3;
+            Player.GetComponent<Player>().Save();
             CantMove();
             InvokeRepeating("CanMove", 0, 1);
         }
