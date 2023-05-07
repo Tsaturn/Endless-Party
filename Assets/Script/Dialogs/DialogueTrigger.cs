@@ -345,7 +345,7 @@ public class DialogueTrigger : MonoBehaviour
         {
             Player.GetComponent<Player>().Creator.SetActive(true);
             Player.GetComponent<Player>().Creator.transform.position = new Vector3(-1.5f,4.5f,0);
-            InvokeRepeating("Creator_Sigward_Off",0,1);
+            InvokeRepeating("Creator_Sigward_Off",0,0.01f);
         }
     }
 
@@ -362,8 +362,8 @@ public class DialogueTrigger : MonoBehaviour
         if (Player.GetComponent<Player>().Quest["Sigward"] == 1)
         {
             dm.StartDialogue(Sigward_Quest_Ex);
-            InvokeRepeating("BonfirePlayDirector", 1, 1);
-            InvokeRepeating("Creator_Sigward", 1, 1);
+            InvokeRepeating("BonfirePlayDirector", 1, 0.01f);
+            InvokeRepeating("Creator_Sigward", 1, 0.01f);
             Player.GetComponent<Player>().Quest["Sigward"] = 3;
             Player.GetComponent<Player>().Save();
             CantMove();
@@ -611,7 +611,7 @@ public class DialogueTrigger : MonoBehaviour
         {
             Player.GetComponent<Player>().Creator.SetActive(true);
             Player.GetComponent<Player>().Creator.transform.position = new Vector3(-4.33f, -21f, 0);
-            InvokeRepeating("Creator_Sigward_Off", 0, 1);
+            InvokeRepeating("Creator_Sigward_Off", 0, 0.01f);
         }
     }
 

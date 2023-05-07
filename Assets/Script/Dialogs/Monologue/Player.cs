@@ -21,10 +21,12 @@ public class Player : MonoBehaviour
     }
     private void Start()
     {
-        Invoke("ShowDialog", 0f);
+        Creator.SetActive(false);
+        Invoke("ShowDialog", 0.2f);
     }
     private void CreatorOff2()
     {
+        Debug.Log("NoDelete:      " + dt.dm.counter.ToString());
         if (dt.dm.counter == 2) { Debug.Log("Delete"); Creator.SetActive(false); Invoke("CancelCreatorOff2", 1); }
     }
     private void CancelCreatorOff2()
@@ -41,7 +43,7 @@ public class Player : MonoBehaviour
                 dt.Spawn0_TriggerDialogue();
                 d_ind++;
                 Save();
-                InvokeRepeating("CreatorOff2", 0, 1);
+                InvokeRepeating("CreatorOff2", 0, 0.01f);
                 break;
             case 1:
                 Creator.SetActive(true);
@@ -49,7 +51,7 @@ public class Player : MonoBehaviour
                 dt.Spawn1_TriggerDialogue();
                 d_ind++;
                 Save();
-                InvokeRepeating("CreatorOff2", 0, 1);
+                InvokeRepeating("CreatorOff2", 0, 0.01f);
                 break;
             case 2:
                 Creator.SetActive(true);
@@ -57,7 +59,7 @@ public class Player : MonoBehaviour
                 dt.Spawn2_TriggerDialogue();
                 d_ind++;
                 Save();
-                InvokeRepeating("CreatorOff2", 0, 1);
+                InvokeRepeating("CreatorOff2", 0, 0.01f);
                 break;
             case 3:
                 dt.Spawn3_TriggerDialogue();
@@ -70,7 +72,7 @@ public class Player : MonoBehaviour
                 dt.Spawn4_TriggerDialogue();
                 d_ind++;
                 Save();
-                InvokeRepeating("CreatorOff2", 0, 1);
+                InvokeRepeating("CreatorOff2", 0, 0.01f);
                 break;
 
 
