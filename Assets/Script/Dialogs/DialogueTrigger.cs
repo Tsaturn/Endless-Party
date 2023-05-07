@@ -68,6 +68,9 @@ public class DialogueTrigger : MonoBehaviour
     public Dialogue Vik1_dialogue;
     public Dialogue Vik1_1_dialogue;
     public Dialogue Vik2_dialogue;
+    public Dialogue Vik2_Questdialogue;
+    public Dialogue Vik3_dialogue;
+    public Dialogue VikFinal_dialogue;
     public Dialogue Go_dialogue;
     public Dialogue NoGo_dialogue;
     private int viking_counter = 0;
@@ -84,6 +87,7 @@ public class DialogueTrigger : MonoBehaviour
     public Dialogue friend_dialogue;
     public Dialogue natasha_dialogue;
     public Dialogue money_dialogue;
+    public GameObject lightInHouseGalochka;
 
     public GameObject four_wall;
     public GameObject chuvak;
@@ -110,6 +114,8 @@ public class DialogueTrigger : MonoBehaviour
     [Header("Разговор с создателем после кота")]
     public Dialogue CatCreator;
 
+    [Header("Разговор с создателем в конце")]
+    public Dialogue CreatorEnd;
 
     public Dialogue Test_dialogue;
     public Dialogue Test2_dialogue;
@@ -344,8 +350,8 @@ public class DialogueTrigger : MonoBehaviour
         if (dm.counter == 6)
         {
             Player.GetComponent<Player>().Creator.SetActive(true);
-            Player.GetComponent<Player>().Creator.transform.position = new Vector3(-1.5f,4.5f,0);
-            InvokeRepeating("Creator_Sigward_Off",0,0.01f);
+            Player.GetComponent<Player>().Creator.transform.position = new Vector3(-1.5f, 4.5f, 0);
+            InvokeRepeating("Creator_Sigward_Off", 1, 1f);
         }
     }
 
@@ -413,20 +419,40 @@ public class DialogueTrigger : MonoBehaviour
     //Диалог с Викингом1
     public void Viking1Dialog()
     {
-        if (viking_counter == 0)
-        {
-            dm.StartDialogue(Vik1_dialogue);
-            go.SetActive(true);
-            noGo.SetActive(true);
-            CantMove();
-            InvokeRepeating("CanMove", 0, 1);
-        }
-        else if (viking_counter > 0)
+        if (viking_counter > 0)
         {
             dm.StartDialogue(Vik1_1_dialogue);
             CantMove();
             InvokeRepeating("CanMove", 0, 1);
         }
+        else if (Player.GetComponent<Player>().Quest["Vik"] == 0)
+        {
+            dm.StartDialogue(Vik1_dialogue);
+            Player.GetComponent<Player>().Quest["Vik"] = 1;
+            CantMove();
+            InvokeRepeating("CanMove", 0, 1);
+        }
+        else if (Player.GetComponent<Player>().Quest["Vik"] == 1)
+        {
+            dm.StartDialogue(Vik2_Questdialogue);
+            CantMove();
+            InvokeRepeating("CanMove", 0, 1);
+        }
+        else if (Player.GetComponent<Player>().Quest["Vik"] == 2)
+        {
+            dm.StartDialogue(Vik3_dialogue);
+            CantMove();
+            InvokeRepeating("CanMove", 0, 1);
+            go.SetActive(true);
+            noGo.SetActive(true);
+        }
+        else if (Player.GetComponent<Player>().Quest["Vik"] == 3)
+        {
+            dm.StartDialogue(VikFinal_dialogue);
+            CantMove();
+            InvokeRepeating("CanMove", 0, 1);
+        }
+
     }
     public void GoDialog()
     {
@@ -434,6 +460,8 @@ public class DialogueTrigger : MonoBehaviour
         noGo.SetActive(false);
         drakar.SetActive(true);
         viking_counter++;
+        Player.GetComponent<Player>().Quest["Vik"] = 3;
+        Player.GetComponent<Player>().Save();
         dm.StartDialogue(Go_dialogue);
         CantMove();
         InvokeRepeating("CanMove", 0, 1);
@@ -442,6 +470,8 @@ public class DialogueTrigger : MonoBehaviour
     {
         go.SetActive(false);
         noGo.SetActive(false);
+        Player.GetComponent<Player>().Quest["Vik"] = 3;
+        Player.GetComponent<Player>().Save();
         dm.StartDialogue(NoGo_dialogue);
         CantMove();
         InvokeRepeating("CanMove", 0, 1);
@@ -462,7 +492,8 @@ public class DialogueTrigger : MonoBehaviour
         four_wall.SetActive(true);
         chuvak.SetActive(true);
         friend.SetActive(true);
-        natasha.SetActive(true);
+        if (Player.GetComponent<Player>().Quest["Gal"] != 3)
+            natasha.SetActive(true);
         money.SetActive(true);
         CantMove();
         InvokeRepeating("CanMove", 0, 1);
@@ -511,6 +542,15 @@ public class DialogueTrigger : MonoBehaviour
         CantMove();
         InvokeRepeating("CanMove", 0, 1);
     }
+
+    private void GalochkaTP()
+    {
+        if (dm.counter == 0)
+        {
+            natasha.GetComponent<Galochka>().End();
+            CancelInvoke("GalochkaTP");
+        }
+    }
     public void NatashaDialog()
     {
         four_wall.SetActive(false);
@@ -519,9 +559,13 @@ public class DialogueTrigger : MonoBehaviour
         natasha.SetActive(false);
         money.SetActive(false);
         dm.StartDialogue(natasha_dialogue);
+        lightInHouseGalochka.SetActive(false);
+        Player.GetComponent<Player>().Creator.transform.position = new Vector3(-2.127f, -22.64f, 0);
+        Player.GetComponent<Player>().Creator.SetActive(true);
+        Player.GetComponent<Player>().Quest["Gal"] = 3;
+        Player.GetComponent<Player>().Save();
         CantMove();
-        natasha.GetComponent<Galochka>().End();
-        //InvokeRepeating("CanMove", 0, 1);
+        InvokeRepeating("GalochkaTP", 0, 0.2f);
     }
     public void MoneyDialog()
     {
@@ -559,6 +603,7 @@ public class DialogueTrigger : MonoBehaviour
             case 4:
                 miha_counter++;
                 dm.StartDialogue(Miha_dialogue4);
+                Player.GetComponent<Player>().Quest["Vik"] = 2;
                 bath.SetActive(true);
                 break;
 
@@ -613,6 +658,20 @@ public class DialogueTrigger : MonoBehaviour
             Player.GetComponent<Player>().Creator.transform.position = new Vector3(-4.33f, -21f, 0);
             InvokeRepeating("Creator_Sigward_Off", 0, 0.01f);
         }
+    }
+
+    //Разговор с создателем в конце
+    public void CreatorEnd_dialog()
+    {
+        dm.StartDialogue(CreatorEnd);
+        CantMove();
+        InvokeRepeating("CreatorEndGame", 0, 0.2f);
+    }
+
+    private void CreatorEndGame()
+    {
+        if (dm.counter == 0)
+            Player.GetComponent<Player>().Creator.GetComponent<TrueEnd>().End();
     }
 
     public void Test_TriggerDialogue() //Запуск диалога

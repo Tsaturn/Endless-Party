@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
     public DialogueTrigger dt;
     public int d_ind = 0;
     public GameObject Creator;
+    public GameObject CreatorCanvas;
 
     //0 - ничего не сделано, 1 - квест выполнен, 2 - квест провален, 3 - больше не запускать этот диалог
     public Dictionary<string, int> Quest = new Dictionary<string, int>();
@@ -18,11 +19,25 @@ public class Player : MonoBehaviour
             Quest["Sigward"] = 0; 
         if (!Quest.ContainsKey("Cat"))
             Quest["Cat"] = 0; 
+        if (!Quest.ContainsKey("Gal"))
+            Quest["Gal"] = 0; 
+        if (!Quest.ContainsKey("Vik"))
+            Quest["Vik"] = 0; 
     }
     private void Start()
     {
         Creator.SetActive(false);
         Invoke("ShowDialog", 0.2f);
+    }
+
+    private void Update()
+    {
+        if (Creator.active == false && Quest["Sigward"] == 3 && Quest["Cat"] == 3 && Quest["Gal"] == 3 && Quest["Vik"] == 3)
+        {
+            Creator.SetActive(true);
+            CreatorCanvas.SetActive(true);
+            Creator.transform.position = new Vector3(-5.5f,8.35f,0);
+        }
     }
     private void CreatorOff2()
     {
@@ -91,6 +106,8 @@ public class Player : MonoBehaviour
         d_ind = data.d_ind;
         Quest["Sigward"] = data.Sigward;
         Quest["Cat"] = data.Cat;
+        Quest["Gal"] = data.Gal;
+        Quest["Vik"] = data.Vik;
     }
 
     public void Save()
@@ -102,7 +119,10 @@ public class Player : MonoBehaviour
         var data = new SaveData.Player()
         {
             d_ind = this.d_ind,
+            Sigward = this.Quest["Sigward"],
             Cat = this.Quest["Cat"],
+            Gal = this.Quest["Gal"],
+            Vik = this.Quest["Vik"],
         };
         return data;
     }

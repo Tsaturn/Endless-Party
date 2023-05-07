@@ -45,6 +45,8 @@ public class MainMenu : MonoBehaviour
             d_ind = 0,
             Sigward = 0,
             Cat = 0,
+            Gal = 0,
+            Vik = 0,
         };
         return data;
     }
