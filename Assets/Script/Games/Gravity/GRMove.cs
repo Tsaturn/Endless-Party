@@ -97,7 +97,7 @@ public class GRMove : MonoBehaviour
     {
         score++;
         text.text = "Score: " + score.ToString();
-        if (score >= 40) { win = true; endbut.SetActive(true); }
+        if (score >= 20) { win = true; endbut.SetActive(true); }
     }
 
     public void live_dec()
