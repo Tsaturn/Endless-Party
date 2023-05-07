@@ -23,31 +23,38 @@
  * **Начало взаимодействия с NPC:** ЛКМ
  * **Продолжение диалога:** F
  * **Открытие внутриигрового меню:** ESCAPE
+ * **Управление в мини-играх:** SPACE
 
 # **Кадры из игры**
 ____
 
 *__Вариативность диалога__*
 
-![Диалог1](https://user-images.githubusercontent.com/76452124/229344089-1e4656df-ffc2-43e8-a995-19d133d16506.png)
-![Звонок по телефону](https://user-images.githubusercontent.com/76452124/229343721-4cba553a-7bf3-421b-b1f2-bb7a6cb1e5e0.png)
+![image](https://user-images.githubusercontent.com/76452124/236701441-a1e260e6-67ea-4892-8cd2-f8872a3a72bd.png)
+![image](https://user-images.githubusercontent.com/76452124/236701397-1f4dcbb0-82dd-417c-8cc3-89e1c6c8aff7.png)
 
 *__Реакция на очередное пробуждение на вечеринке__*
 
-![появление](https://user-images.githubusercontent.com/76452124/229344450-acf56e08-0530-4f81-9179-8bbdfc107a79.png)
+![image](https://user-images.githubusercontent.com/76452124/236701224-b36869f4-69a5-4524-aa5a-3f4178dfe42f.png)
 
 *__Возможность взаимодействовать с объектами только после определённых диалогов__*
 
-![Диалог2](https://user-images.githubusercontent.com/76452124/229344219-00dfceb6-2cbe-422e-9f54-89b983e4aa7c.png)
+![image](https://user-images.githubusercontent.com/76452124/236701080-c5bd62f2-0ba3-4129-b4b4-b7547b6db129.png)
 
-*__Получение концвоки__*
+*__Мини-игры__*
 
-![концвока](https://user-images.githubusercontent.com/76452124/229344590-a6e0a595-4ba0-41f7-a4fd-334fc445d3bd.png)
+![image](https://user-images.githubusercontent.com/76452124/236701140-fa81738a-93e7-465b-90e8-fc9b85cf69ba.png)
+![image](https://user-images.githubusercontent.com/76452124/236701367-aee67d47-a878-4108-b26c-f7b83e1a3b82.png)
+
+
+*__Получение концовки__*
+
+![image](https://user-images.githubusercontent.com/76452124/236701006-9e1bfcc9-f78f-4946-8355-ffff93688b92.png)
 
 
 *__Список полученных концовок__*
 
-![концовки](https://user-images.githubusercontent.com/76452124/229344358-df5e7caa-d0e2-4cae-afff-4bfc70c77443.png)
+![image](https://user-images.githubusercontent.com/76452124/236700942-0de8e481-6e73-4d70-b90c-701cfe17ebab.png)
 
 
 
