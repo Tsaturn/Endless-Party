@@ -9,5 +9,6 @@ namespace SaveData
     {
         public int d_ind;
         public int Sigward;
+        public int Cat;
     }
 }

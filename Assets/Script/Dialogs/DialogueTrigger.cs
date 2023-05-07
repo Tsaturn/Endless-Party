@@ -107,6 +107,10 @@ public class DialogueTrigger : MonoBehaviour
     public Dialogue CatRules;
     public Cat cat;
 
+    [Header("Разговор с создателем после кота")]
+    public Dialogue CatCreator;
+
+
     public Dialogue Test_dialogue;
     public Dialogue Test2_dialogue;
 
@@ -332,7 +336,26 @@ public class DialogueTrigger : MonoBehaviour
     //Диалог с Сигвардом
     private void BonfirePlayDirector()
     {
-        if (dm.counter == 0) BonfirePlayDir.SetActive(true);
+        if (dm.counter == 6) BonfirePlayDir.SetActive(true);
+    }
+
+    private void Creator_Sigward()
+    {
+        if (dm.counter == 6)
+        {
+            Player.GetComponent<Player>().Creator.SetActive(true);
+            Player.GetComponent<Player>().Creator.transform.position = new Vector3(-1.5f,4.5f,0);
+            InvokeRepeating("Creator_Sigward_Off",0,1);
+        }
+    }
+
+    private void Creator_Sigward_Off()
+    {
+        if (dm.counter == 0)
+        {
+            Player.GetComponent<Player>().Creator.SetActive(false);
+            CancelInvoke("Creator_Sigward_Off");
+        }
     }
     public void SigwardDialog()
     {
@@ -340,6 +363,7 @@ public class DialogueTrigger : MonoBehaviour
         {
             dm.StartDialogue(Sigward_Quest_Ex);
             InvokeRepeating("BonfirePlayDirector", 1, 1);
+            InvokeRepeating("Creator_Sigward", 1, 1);
             Player.GetComponent<Player>().Quest["Sigward"] = 3;
             Player.GetComponent<Player>().Save();
             CantMove();
@@ -569,6 +593,26 @@ public class DialogueTrigger : MonoBehaviour
     private void CancelCatPlay()
     {
         CancelInvoke("CatPlay");
+    }
+
+    public void CatCreatorDialog()
+    {
+        dm.StartDialogue(CatCreator);
+        Creator_Cat();
+        Player.GetComponent<Player>().Quest["Cat"] = 3;
+        Player.GetComponent<Player>().Save();
+        CantMove();
+        InvokeRepeating("CanMove", 0, 1);
+    }
+
+    private void Creator_Cat()
+    {
+        if (dm.counter == 6)
+        {
+            Player.GetComponent<Player>().Creator.SetActive(true);
+            Player.GetComponent<Player>().Creator.transform.position = new Vector3(-4.33f, -21f, 0);
+            InvokeRepeating("Creator_Sigward_Off", 0, 1);
+        }
     }
 
     public void Test_TriggerDialogue() //Запуск диалога

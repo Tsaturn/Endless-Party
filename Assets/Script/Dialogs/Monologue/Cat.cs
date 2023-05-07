@@ -28,6 +28,11 @@ public class Cat : MonoBehaviour
     public Camera gameCamera;
     public GameObject GRCatGame;
     public DialogueTrigger dt;
+
+    private void Start()
+    {
+        if (player.GetComponent<Player>().Quest["Cat"] == 3) count = 800;
+    }
     public void PlayGame()
     {
         GRCatGame.SetActive(true);
@@ -133,6 +138,12 @@ public class Cat : MonoBehaviour
             case 777:
                 diaglog.SetActive(true);
                 text.text = "Ладно, я прощаю твоё невежество, лысая обезьяна.";
+                dt.CatCreatorDialog();
+                count = 800;
+                break;
+            case 800:
+                diaglog.SetActive(true);
+                text.text = "Мрр?";
                 break;
 
         }

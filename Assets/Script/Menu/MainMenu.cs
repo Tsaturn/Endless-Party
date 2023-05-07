@@ -43,7 +43,8 @@ public class MainMenu : MonoBehaviour
         var data = new SaveData.Player()
         {
             d_ind = 0,
-            Sigward= 0,
+            Sigward = 0,
+            Cat = 0,
         };
         return data;
     }

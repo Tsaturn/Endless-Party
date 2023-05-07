@@ -10,6 +10,7 @@ TagManager:
   - Destroyer
   - PlayerDestr
   - GRPlayer
+  - Creator
   layers:
   - Default
   - TransparentFX

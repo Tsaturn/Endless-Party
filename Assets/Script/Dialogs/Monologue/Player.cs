@@ -15,7 +15,9 @@ public class Player : MonoBehaviour
     {
         Load();
         if (!Quest.ContainsKey("Sigward"))
-            Quest["Sigward"] = 0;
+            Quest["Sigward"] = 0; 
+        if (!Quest.ContainsKey("Cat"))
+            Quest["Cat"] = 0; 
     }
     private void Start()
     {
@@ -86,6 +88,7 @@ public class Player : MonoBehaviour
 
         d_ind = data.d_ind;
         Quest["Sigward"] = data.Sigward;
+        Quest["Cat"] = data.Cat;
     }
 
     public void Save()
@@ -97,7 +100,7 @@ public class Player : MonoBehaviour
         var data = new SaveData.Player()
         {
             d_ind = this.d_ind,
-            Sigward = this.Quest["Sigward"],
+            Cat = this.Quest["Cat"],
         };
         return data;
     }
