@@ -1,0 +1,11 @@
+https://papik.pro/en/drawings/pixel/4421-pixel-drawings-pie-48-photos.html
+https://ru.pinterest.com/pin/349099408617975809/
+https://www.tumblr.com/valenberg/185935587164/cans-twitter-instagram-deviantart-facebook
+https://www.behance.net/gallery/17537939/Pixelmania?action=report
+https://www.reddit.com/r/PixelArt/comments/39gybn/oc_cc_a_viking/
+https://supportivy.com/fire-pixel-art-photos/
+https://www.spriters-resource.com/pc_computer/stardewvalley/
+https://tenor.com/ru/view/bonfire-darksouls-gif-20055179
+https://foni.club/arty/25752-piksel-art-rycar-46-foto.html
+https://www.deviantart.com/cyangmou/art/GBA-SOULS-SQUAD-609910969
+https://gas-kvas.com/risunki-po-kletochkam/11466-lodka-risunok-po-kletochkam-45-foto.html
